@@ -1,7 +1,12 @@
-h1, h3 {
+h1 {
     font-family: 'Knewave';
     text-align: center;
     margin-top:5%;
+}
+
+h3 {
+    font-family: 'Knewave';
+    text-align: center;
 }
 
 body {
@@ -13,6 +18,11 @@ img {
     display: inline-block;
     align-content: center;
 
+}
+
+hr {
+    opacity: 50%;
+    margin: 3% 0 3% 0;
 }
 
 .mx-auto {
