@@ -4,31 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Planet Points</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
-    <h1>CRYSTAL COLLECTION GAME</h1>
 
-    <h3><span id="number-to-guess">GUESS THE NUMBER</span</h3>
-    
-    <!-- enter container div -->
+    <div class="container">
 
-    <br>
-    <br>
+        <h1>PLANTARY GAME : GUESS THE NUMBER!</h1>
+        
+        <h3 id="number-to-guess">GUESS THE NUMBER</h3>
+            
+            <!-- enter container div -->
+            <div class="row">
+            <div class="mx-auto">
 
-    <div id="crystals">
-        <!-- We gave our crystal image the class ".crystal-image" to apply the resize-->
-        <img class="crystal-image" src="assets/images/widget.jpg" alt="crystals">
-        </div>
-   
-    <!-- Here we added a link to the jQuery library -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <!-- Below is where our JavaScript code will go -->
-    <script type="text/javascript" href="assets/javascript/game.css">
-    
-    </script>
+                <img class="planet-image" src="assets/images/blue.jpg" class="rounded float-left" alt="Designed by Freepik">
+
+                <img class="planet-image" src="assets/images/red.jpg" class="rounded float-left" alt="Designed by Freepik">
+
+                <img class="planet-image" src="assets/images/yellow.jpg" class="rounded float-left" alt="Designed by Freepik">
+
+                <img class="planet-image" src="assets/images/green.jpg" class="rounded float-left" alt="Designed by Freepik">
+
+            </div>
+            </div>
+            <!-- Here we added a link to the jQuery library -->
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            
+            <!-- Below is where our JavaScript code will go -->
+            <script type="text/javascript" src="assets/javascript/game.js"></script>
+            
+            
+    </div>
 </body>
 </html>

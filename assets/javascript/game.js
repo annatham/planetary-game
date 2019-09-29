@@ -13,7 +13,7 @@ $("#number-to-guess").text(targetNumber);
 
     // Here we created code that selects a number either 10 or 11.
     // We'll set this number at the start of the "game".
-    var numbers = [1,2, 3, 4, 5, 6, 7, 8, 9];
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     // var increment = numbers[Math.round(Math.random())];
 
     // Next we create a for loop to create crystals for every numbers.
@@ -69,6 +69,8 @@ $("#number-to-guess").text(targetNumber);
         // Then they are alerted with a loss.
             alert("lOsErRrRr!!");
 }
+
+// tagetScor
 
 // This is fine except the way our code is written every user will win first (when they hit 50).
 // But will then lose immediately if they click again. Seems pointless right?
