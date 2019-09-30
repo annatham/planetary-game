@@ -5,47 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Planet Points</title>
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
     <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap" rel="stylesheet">
-
 
 </head>
 <body>
 
     <div class="container">
-
-        <h1>PLANTARY GAME : GUESS THE NUMBER!</h1>
+        
+        <h1>PLANETARY : IT'S OUTTA THIS WORLD!</h1>
         
         <hr>
         
-        <h3 id="number-to-guess"></h3>
-
+        <h5>Click on planets to collect points to match the value listed. If the total points are over the total amount, you lose. </h5>
+        
         <hr>
+<!-- enter container div -->
+        <div class="row">
+        <div class="mx-auto">
             
-            <!-- enter container div -->
-            <div class="row">
-            <div class="mx-auto">
+            <img class="blue-planet" src="assets/images/blue.jpg" class="rounded float-left" alt="Designed by Freepik">
+            
+            <img class="red-planet" src="assets/images/red.jpg" class="rounded float-left" alt="Designed by Freepik">
+            
+            <img class="yellow-planet" src="assets/images/yellow.jpg" class="rounded float-left" alt="Designed by Freepik">
+            
+            <img class="green-planet" src="assets/images/green.jpg" class="rounded float-left" alt="Designed by Freepik">
+            
+        </div>
+        </div>
 
-                <img class="planet-image" src="assets/images/blue.jpg" class="rounded float-left" alt="Designed by Freepik">
+        <hr>
+        
+        <div class="row">
 
-                <img class="planet-image" src="assets/images/red.jpg" class="rounded float-left" alt="Designed by Freepik">
+                <div class="col">
 
-                <img class="planet-image" src="assets/images/yellow.jpg" class="rounded float-left" alt="Designed by Freepik">
+                    <h3>GUESS THIS NUMBER: 0 </h3>
 
-                <img class="planet-image" src="assets/images/green.jpg" class="rounded float-left" alt="Designed by Freepik">
+                </div>
+                <div class="col">
+
+                    <h3>SCORE: 0</h3>
+                    
+                </div>
 
             </div>
+
+        <hr>
+
+        <div class="row">
+
+                <div class="col">
+
+                        <h3>WINS: 0</h3>
+
+                </div>
+                <div class="col">
+
+                        <h3>LOSSES: 0</h3>
+                    
+                </div>
+
             </div>
-            <!-- Here we added a link to the jQuery library -->
+        
+            <hr>
+
+
+                <button type="button" class="btn btn-dark">reset</button>
+            
+    </div>
+        
+        <!-- Here we added a link to the jQuery library -->
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             
             <!-- Below is where our JavaScript code will go -->
             <script type="text/javascript" src="assets/javascript/game.js"></script>
             
             
-    </div>
 </body>
 </html>

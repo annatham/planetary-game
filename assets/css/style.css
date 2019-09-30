@@ -1,16 +1,15 @@
 h1 {
     font-family: 'Knewave';
     text-align: center;
-    margin-top:5%;
+    margin-top: 3%;
 }
 
-h3 {
+h3, h5 {
     font-family: 'Knewave';
     text-align: center;
 }
 
 body {
-    /* background-image: url(../images/pink\ dust.png); */
     background-image: url(../images/stardust_@2X.png);
 }
 
@@ -22,9 +21,9 @@ img {
 
 hr {
     opacity: 50%;
-    margin: 3% 0 3% 0;
+    margin: 2% 0 2% 0;
 }
 
-.mx-auto {
-    height: auto;
+button {
+   float: right;
 }
