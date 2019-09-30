@@ -6,45 +6,52 @@ $(document).ready(function() {
 
     var win = 0;
     var losses = 0;
-    var planets = 0;
+    var planets;
 
     // Here we created code that selects a number either 10 or 11.
-    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var randomNumber = randomNumber();
 
-    var randomTargetNumber = randomTargetNumber();
-
-    function randomeImgValue() {
-        (".blue-planet").on("click", function() {
-            attr(numbers(Math.round(Math.random() * 5)))
-        });
-        (".red-planet").on("click", function() {
-            attr(numbers(Math.round(Math.random() * 5)))
-        });
-        (".yellow-planet").on("click", function() {
-            attr(numbers(Math.round(Math.random() * 5)))
-        });
-        (".green-planet").on("click", function() {
-            attr(numbers(Math.round(Math.random() * 5)))
-        });
+    function randomNumber(){
+        // generate random  number formula
+        return Math.round(Math.random() * 50) + 25;
     };
 
+    $(".blue-planet").on("click", function(event) {
+        console.log(Math.round(Math.random() * 10) + 1);
+    });
+    
+    $(".red-planet").on("click", function(event) {
+        console.log(Math.round(Math.random() * 10) + 1);
+    });
+    
+    $(".yellow-planet").on("click", function(event) {
+        console.log(Math.round(Math.random() * 10) + 1);
+    });
+    
+    $(".green-planet").on("click", function(event) {
+        console.log(Math.round(Math.random() * 10) + 1);
+    });
 
-    function randomTargetNumber(){
-        // generate random target value
-
+    function randomImgValue() {
     };
 
-    randomeImgValue();
-    randomTargetNumber();
-        
+    console.log(randomNumber);
+    // randomImgValue();
+    // randomNumber();
+    console.log(randomImgValue);
+
+    function resetGame(){
 
         score = 0;
         // Generate random crystal values.
         planets = randomImgValue();
         // Generate a random target number and render it to the page.
-        randomNum = randomNumGen();
-        $("#random-area").text(randomNum);
+        randomNumber = randomNumber();
+        
+        $("#targer-number").text(randomNumber);
     }
+
+
     // Here we created an on-click event that responds to button clicks of the crystal image.
     (".planet-image").on("click", function() {
 
@@ -85,4 +92,3 @@ $(document).ready(function() {
 
     });
 });
-
