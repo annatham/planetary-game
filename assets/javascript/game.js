@@ -16,23 +16,26 @@ $(document).ready(function() {
         return Math.round(Math.random() * 50) + 25;
     };
 
-    $(".blue-planet").on("click", function(event) {
-        console.log(Math.round(Math.random() * 10) + 1);
-    });
-    
-    $(".red-planet").on("click", function(event) {
-        console.log(Math.round(Math.random() * 10) + 1);
-    });
-    
-    $(".yellow-planet").on("click", function(event) {
-        console.log(Math.round(Math.random() * 10) + 1);
-    });
-    
-    $(".green-planet").on("click", function(event) {
-        console.log(Math.round(Math.random() * 10) + 1);
-    });
-
+    // not working in function
     function randomImgValue() {
+        
+        $(".blue-planet").on("click", function(event) {
+            console.log(Math.round(Math.random() * 10) + 1);
+            score += planetValue;
+        });
+        
+        $(".red-planet").on("click", function(event) {
+            console.log(Math.round(Math.random() * 10) + 1);
+        });
+        
+        $(".yellow-planet").on("click", function(event) {
+            console.log(Math.round(Math.random() * 10) + 1);
+        });
+        
+        $(".green-planet").on("click", function(event) {
+            console.log(Math.round(Math.random() * 10) + 1);
+        });
+
     };
 
     console.log(randomNumber);
@@ -40,16 +43,6 @@ $(document).ready(function() {
     // randomNumber();
     console.log(randomImgValue);
 
-    function resetGame(){
-
-        score = 0;
-        // Generate random crystal values.
-        planets = randomImgValue();
-        // Generate a random target number and render it to the page.
-        randomNumber = randomNumber();
-        
-        $("#targer-number").text(randomNumber);
-    }
 
 
     // Here we created an on-click event that responds to button clicks of the crystal image.
@@ -84,11 +77,22 @@ $(document).ready(function() {
             losses++;
         }
 
-// tagetScor
-
-// This is fine except the way our code is written every user will win first (when they hit 50).
-// But will then lose immediately if they click again. Seems pointless right?
-// To make this a game we need to create additional code to randomize the counter and targetScore.
-
     });
+
+    function resetGame(){
+
+        $("<button>").on("click", function(event) {
+
+        score = 0;
+        // Generate random crystal values.
+        planets = empty();
+        // Generate a random target number and render it to the page.
+        randomNumber = randomNumber();
+        
+        $("#targer-number").text(randomNumber);
+    });
+    };
+
+    resetGame();
+
 });
