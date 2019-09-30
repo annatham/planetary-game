@@ -14,18 +14,29 @@ $(document).ready(function() {
     var randomTargetNumber = randomTargetNumber();
 
     function randomeImgValue() {
-        // generate random value for planets
-    }
+        (".blue-planet").on("click", function() {
+            attr(numbers(Math.round(Math.random() * 5)))
+        });
+        (".red-planet").on("click", function() {
+            attr(numbers(Math.round(Math.random() * 5)))
+        });
+        (".yellow-planet").on("click", function() {
+            attr(numbers(Math.round(Math.random() * 5)))
+        });
+        (".green-planet").on("click", function() {
+            attr(numbers(Math.round(Math.random() * 5)))
+        });
+    };
+
 
     function randomTargetNumber(){
         // generate random target value
-        ("#blue-planet")
-        ("#red-planet")
-        ("#yellow-planet")
-        ("#green-planet")
 
-    }
-    function resetGame(){
+    };
+
+    randomeImgValue();
+    randomTargetNumber();
+        
 
         score = 0;
         // Generate random crystal values.
