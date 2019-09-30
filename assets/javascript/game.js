@@ -1,98 +1,105 @@
 $(document).ready(function() {
 
-    // score
     var targetNumber = 0;
     var score = 0;
 
-    var win = 0;
+    var wins = 0;
     var losses = 0;
-    var planets;
 
-    // Here we created code that selects a number either 10 or 11.
-    var randomNumber = randomNumber();
+    // Random number
+    var randomNumber = Math.round(Math.random() * 50) + 25;
 
-    function randomNumber(){
-        // generate random  number formula
-        return Math.round(Math.random() * 50) + 25;
-    };
+    $("#target-number").html("GUESS THIS NUMBER: " +randomNumber);
 
-    // not working in function
-    function randomImgValue() {
-        
-        $(".blue-planet").on("click", function(event) {
-            console.log(Math.round(Math.random() * 10) + 1);
-            score += planetValue;
-        });
-        
-        $(".red-planet").on("click", function(event) {
-            console.log(Math.round(Math.random() * 10) + 1);
-        });
-        
-        $(".yellow-planet").on("click", function(event) {
-            console.log(Math.round(Math.random() * 10) + 1);
-        });
-        
-        $(".green-planet").on("click", function(event) {
-            console.log(Math.round(Math.random() * 10) + 1);
-        });
+    // value for images
 
-    };
-
-    console.log(randomNumber);
-    // randomImgValue();
-    // randomNumber();
-    console.log(randomImgValue);
-
-
-
-    // Here we created an on-click event that responds to button clicks of the crystal image.
-    (".planet-image").on("click", function() {
-
-        // Determining the crystal's value requires us to extract the value from the data attribute.
-        // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-        // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-        // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
-
-        var planetValue = ($(this).attr("data-planetvalue"));
-        planetValue = parseInt(planetValue);
-        // We then add the crystalValue to the user's "counter" which is a global variable.
-        // Every click, from every crystal adds to the global counter.
-        score += planetValue;
-
-        // Here we created some logic to "check" if the click counter matches the targetNumber.
-        // Remember, this click event will be triggered with each click.
-        // With each click the counter will increase by 10 and be re-evaluated against target.
-        
-        alert("Total: " + score);
-
-        if (score === targetNumber) {
-            alert("wInNeR! wInNeR! cHiCkEn DiNneR!")
-            wins++;
-        }
-
-        // Here we added an "else if" condition. If the user's counter ever exceeds the targetNumber...
-        else if (score > targetNumber) {
-        // Then they are alerted with a loss.
-            alert("lOsErRrRr!!");
-            losses++;
-        }
-
-    });
-
+    var bluePlanet = Math.round(Math.random() * 10) + 1;
+    var redPlanet = Math.round(Math.random() * 10) + 1;
+    var yellowPlanet = Math.round(Math.random() * 10) + 1;
+    var greenPlanet = Math.round(Math.random() * 10) + 1;
+    
+ 
     function resetGame(){
 
-        $("<button>").on("click", function(event) {
+        $("#reset").on("click", function(event) {
 
-        score = 0;
-        // Generate random crystal values.
-        planets = empty();
-        // Generate a random target number and render it to the page.
-        randomNumber = randomNumber();
-        
-        $("#targer-number").text(randomNumber);
-    });
+            score = 0;
+            randomNumber = Math.round(Math.random() * 50) + 25;
+            
+            $("#target-number").html("GUESS THIS NUMBER: " +randomNumber);
+            $("#total-score").html("SCORE: " +score);
+        });
+
     };
 
-    resetGame();
+  
+
+    $("#blue-planet").on("click", function(event) {
+        console.log((Math.round(Math.random() * 10) + 1));
+        score = score + bluePlanet;score++;
+        $("#total-score").html("SCORE: " +score);
+
+    });
+
+        
+    $("#red-planet").on("click", function(event) {
+        console.log(Math.round(Math.random() * 10) + 1);
+        score = score + redPlanet;score++;
+        $("#total-score").html("SCORE: " +score);
+
+    });
+
+    $("#yellow-planet").on("click", function(event) {
+        console.log(Math.round(Math.random() * 10) + 1);
+        score = score + yellowPlanet;score++;
+        $("#total-score").html("SCORE: " +score);
+
+    });
+    
+    $("#green-planet").on("click", function(event) {
+        console.log(Math.round(Math.random() * 10) + 1);
+        score = score + greenPlanet;score++;
+        $("#total-score").html("SCORE: " +score);
+
+    });
+
+    // };
+
+    // randomImgValue();
+    // randomNumber();
+    // console.log(randomImgValue);
+
+
+    var addWins = $("<h3>").html("Wins: " + wins);
+
+    var addLosses = $("<h3>").html("Losses: " + losses);
+
+    $(".wins").append(addWins);
+    $(".losses").append(addLosses);
+
+
+        
+    $(".planet-images").on("click", function (event){ 
+
+        if (score === targetNumber) {
+            alert("wInNeR! wInNeR! cHiCkEn DiNneR!");
+            wins++;
+            resetGame();
+        }
+        // // if score exceeds
+        // else if (score > targetNumber) {
+        //     // Then they are alerted with a loss.
+        //     alert("lOsErRrRr!!");
+        //     losses++;
+        //     resetGame();
+        // }
+    });
+    
+    
+// $("#blue-planet").on("click", );
+// $("#red-planet").on("click", );
+// $("#yellow-planet").on("click", );
+// $("#green-planet").on("click", );
+
 
 });
