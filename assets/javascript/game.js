@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var score = 0;
+    var totalScore = 0;
 
     var wins = 0;
     var losses = 0;
@@ -22,40 +22,45 @@ $(document).ready(function() {
 
         $("#reset").on("click", function(event) {
 
-            score = 0;
+            totalScore = 0;
             randomNumber = Math.round(Math.random() * 50) + 25;
-            
+
             $("#target-number").html("GUESS THIS NUMBER: " +randomNumber);
-            $("#total-score").html("SCORE: " +score);
+            $("#total-score").html("SCORE: " +totalScore);
         });
 
     };
+    resetGame();
 
 
   function randomImgValue (){
 
     $("#blue-planet").on("click", function(event) {
-        score = score + bluePlanet;score++;
-        $("#total-score").html("SCORE: " +score);
+        totalScore = totalScore + bluePlanet;
+        totalScore++;
+        $("#total-score").html("SCORE: " +totalScore);
 
     });
 
         
     $("#red-planet").on("click", function(event) {
-        score = score + redPlanet;score++;
-        $("#total-score").html("SCORE: " +score);
+        totalScore = totalScore + redPlanet;
+        totalScore++;
+        $("#total-score").html("SCORE: " +totalScore);
 
     });
 
     $("#yellow-planet").on("click", function(event) {
-        score = score + yellowPlanet;score++;
-        $("#total-score").html("SCORE: " +score);
+        totalScore = totalScore + yellowPlanet;
+        totalScore++;
+        $("#total-score").html("SCORE: " +totalScore);
 
     });
     
     $("#green-planet").on("click", function(event) {
-        score = score + greenPlanet;score++;
-        $("#total-score").html("SCORE: " +score);
+        totalScore = totalScore + greenPlanet;
+        totalScore++;
+        $("#total-score").html("SCORE: " +totalScore);
 
     });
 
@@ -65,23 +70,21 @@ $(document).ready(function() {
     // randomNumber();
     // console.log(randomImgValue);
 
-    function updatePoints(){
- 
-    if (score === targetNumber) {
-        wins++;
-        $(".wins").html("Wins: " + wins++);
-    }
-    // if score exceeds
-    else if (score > targetNumber) {
-        // Then they are alerted with a loss.
-        losses++;
-        $(".losses").html("Losses: " + losses++);
-    }
+    $(".planet-images").on(click, function(){
     
-    };
+        if (totalScore === targetNumber) {
+            wins++;
+            $(".wins").html("Wins: " + wins++);
+        }
+        // if score exceeds
+        else if (totalScore > targetNumber) {
+            // Then they are alerted with a loss.
+            losses++;
+            $(".losses").html("Losses: " + losses++);
+        }
+        
+    });
 
-    resetGame();
-    updatePoints();
 
 
 });
