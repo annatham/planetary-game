@@ -8,7 +8,9 @@ $(document).ready(function() {
     // Random number
     var randomNumber = Math.round(Math.random() * 50) + 25;
 
-    var targetNumber = $("#target-number").html("GUESS THIS NUMBER: " +randomNumber);
+    var targetNumber = randomNumber;
+
+    $("#target-number").html("GUESS THIS NUMBER: " +targetNumber);
 
     // value for images
 
@@ -70,20 +72,22 @@ $(document).ready(function() {
     // randomNumber();
     // console.log(randomImgValue);
 
-    $(".planet-images").on(click, function(){
+
+    if (totalScore === targetNumber) {
+        wins++;
+        $("#wins").html("Wins: " +wins);
+        resetGame();
+
+    }
+    // if score exceeds
+    else if (totalScore > targetNumber) {
+        losses++;
+        $("#losses").html("Losses: " +losses);
+        resetGame();
+
+    }
     
-        if (totalScore === targetNumber) {
-            wins++;
-            $(".wins").html("Wins: " + wins++);
-        }
-        // if score exceeds
-        else if (totalScore > targetNumber) {
-            // Then they are alerted with a loss.
-            losses++;
-            $(".losses").html("Losses: " + losses++);
-        }
-        
-    });
+
 
 
 
