@@ -13,10 +13,6 @@ $(document).ready(function() {
 
     // value for images
 
-    var bluePlanet = Math.round(Math.random() * 10) + 1;
-    var redPlanet = Math.round(Math.random() * 10) + 1;
-    var yellowPlanet = Math.round(Math.random() * 10) + 1;
-    var greenPlanet = Math.round(Math.random() * 10) + 1;
     
  
     function resetGame(){
@@ -31,8 +27,8 @@ $(document).ready(function() {
         });
 
     };
-
-  
+        resetGame();
+  function randomImgValue (){
 
     $("#blue-planet").on("click", function(event) {
         console.log((Math.round(Math.random() * 10) + 1));
@@ -63,9 +59,9 @@ $(document).ready(function() {
 
     });
 
-    // };
+    };
 
-    // randomImgValue();
+    randomImgValue();
     // randomNumber();
     // console.log(randomImgValue);
 
@@ -86,20 +82,16 @@ $(document).ready(function() {
             wins++;
             resetGame();
         }
-        // // if score exceeds
-        // else if (score > targetNumber) {
-        //     // Then they are alerted with a loss.
-        //     alert("lOsErRrRr!!");
-        //     losses++;
-        //     resetGame();
-        // }
+        // if score exceeds
+        else if (score > targetNumber) {
+            // Then they are alerted with a loss.
+            alert("lOsErRrRr!!");
+            losses++;
+            resetGame();
+        }
     });
     
     
-// $("#blue-planet").on("click", );
-// $("#red-planet").on("click", );
-// $("#yellow-planet").on("click", );
-// $("#green-planet").on("click", );
 
 
 });
