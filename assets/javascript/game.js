@@ -8,9 +8,9 @@ $(document).ready(function() {
     // Random number
     var randomNumber = Math.round(Math.random() * 50) + 25;
 
-    var targetNumber = randomNumber;
+    // var targetNumber = randomNumber;
 
-    $("#target-number").html("GUESS THIS NUMBER: " +targetNumber);
+    $("#target-number").html("GUESS THIS NUMBER: " +randomNumber);
 
     // value for images
 
@@ -22,25 +22,33 @@ $(document).ready(function() {
  
     function resetGame(){
 
-        $("#reset").on("click", function(event) {
+        totalScore = 0;
+        
+      $("#total-score").empty();
 
-            totalScore = 0;
-            randomNumber = Math.round(Math.random() * 50) + 25;
+      randomNumber = Math.round(Math.random() * 50) + 25;
 
-            $("#target-number").html("GUESS THIS NUMBER: " +randomNumber);
-            $("#total-score").html("SCORE: " +totalScore);
-        });
+      $("#target-number").html("GUESS THIS NUMBER: " +randomNumber);
+      $("#total-score").html("SCORE: " +totalScore);
 
     };
-    resetGame();
 
+    $("#reset").on("click", function(event) {
 
-  function randomImgValue (){
+        totalScore = 0;
+        randomNumber = Math.round(Math.random() * 50) + 25;
+
+        $("#target-number").html("GUESS THIS NUMBER: " +randomNumber);
+        $("#total-score").html("SCORE: " +totalScore);
+    });
+
 
     $("#blue-planet").on("click", function(event) {
         totalScore = totalScore + bluePlanet;
         totalScore++;
         $("#total-score").html("SCORE: " +totalScore);
+
+        checkScore();
 
     });
 
@@ -50,12 +58,16 @@ $(document).ready(function() {
         totalScore++;
         $("#total-score").html("SCORE: " +totalScore);
 
+        checkScore();
+
     });
 
     $("#yellow-planet").on("click", function(event) {
         totalScore = totalScore + yellowPlanet;
         totalScore++;
         $("#total-score").html("SCORE: " +totalScore);
+
+        checkScore();
 
     });
     
@@ -64,29 +76,33 @@ $(document).ready(function() {
         totalScore++;
         $("#total-score").html("SCORE: " +totalScore);
 
+        checkScore();
+
     });
 
-    };
+    
 
-    randomImgValue();
     // randomNumber();
     // console.log(randomImgValue);
 
+    function checkScore(){
 
-    if (totalScore === targetNumber) {
-        wins++;
-        $("#wins").html("Wins: " +wins);
-        resetGame();
-
-    }
-    // if score exceeds
-    else if (totalScore > targetNumber) {
-        losses++;
-        $("#losses").html("Losses: " +losses);
-        resetGame();
-
-    }
-    
+        
+        if (totalScore === randomNumber) {
+            wins++;
+            $("#wins").text("Wins: " +wins);
+            resetGame();
+            
+        }
+        // if score exceeds
+        else if (totalScore > randomNumber) {
+            losses++;
+            $("#losses").text("Losses: " +losses);
+            resetGame();
+            
+        }
+        
+    };
 
 
 
