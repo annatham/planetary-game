@@ -1,3 +1,3 @@
-# unit-4-game
+# Planetary!
 
 https://annatham.github.io/planetary-game/
